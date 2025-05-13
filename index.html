@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>VitalGuard - Vitals Logger + Risk Analyzer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>🩺 VitalGuard - Vitals Risk Analyzer</h1>
+
+    <div class="form">
+      <label>Heart Rate (bpm): <input type="number" id="hr" /></label>
+      <label>Blood Pressure (mmHg): <input type="text" id="bp" placeholder="e.g. 120/80" /></label>
+      <label>Oxygen Saturation (%): <input type="number" id="spo2" /></label>
+      <label>Temperature (°C): <input type="number" id="temp" /></label>
+      <button onclick="analyzeVitals()">Analyze Risk</button>
+    </div>
+
+    <div class="result" id="resultBox">
+      <h3>Your Health Status:</h3>
+      <p id="riskMessage">Enter data to check</p>
+    </div>
+
+    <h3>Vitals Log:</h3>
+    <table id="vitalsTable">
+      <thead>
+        <tr>
+          <th>Heart Rate (bpm)</th>
+          <th>Blood Pressure (mmHg)</th>
+          <th>Oxygen Saturation (%)</th>
+          <th>Temperature (°C)</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <canvas id="historyChart"></canvas>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
